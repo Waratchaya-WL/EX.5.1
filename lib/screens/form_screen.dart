@@ -10,7 +10,26 @@ class FormScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("แบบฟอร์มบันทึกข้อมูล"),
       ),
-      body: Container()
-    );
+      body: Form(
+        child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          TextFormField(
+            decoration: new InputDecoration(labelText: "ชื่อรายการ"),
+            autofocus: true,
+          ),
+          TextFormField(
+            decoration: new InputDecoration(labelText: "จำนวนเงิน"),
+            keyboardType: TextInputType.number,
+          ),
+          FloatingActionButton(
+            child: Text("เพิ่มข้อมูล"),
+            onPressed: (){
+              Navigator.pop(context);
+            },
+            )
+        ],
+        ),
+        ));
   }
 }
