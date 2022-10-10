@@ -44,7 +44,9 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton
           (icon: Icon(Icons.add), 
           onPressed: (){
-
+          Navigator .push(context, MaterialPageRoute(builder: (context){
+            return Text("Screen 2");
+          }));
           })
         ],
       ),
