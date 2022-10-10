@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screens/form_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
       home: const MyHomePage(title: 'แอพบัญชี'),
     );
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
           (icon: Icon(Icons.add), 
           onPressed: (){
           Navigator .push(context, MaterialPageRoute(builder: (context){
-            return Text("Screen 2");
+            return FormScreen();
           }));
           })
         ],
