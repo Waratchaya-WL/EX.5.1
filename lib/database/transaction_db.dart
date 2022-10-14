@@ -32,11 +32,21 @@ class TransactionDB{
 
        }
 
-       Future <bool> loadAllData() async{
+       Future <List<Transactions> loadAllData() async{
        var db = await this.openDatabase();
        var store = intMapStoreFactory.store("expense");
        var snapshot = await store.find(db);
-       print(snapshot);
-       return true;
+       List transactionList = List<Transactions>();
+       for(var record in snapshot){
+          transactionList.add(
+            Transactions(
+              title: record["title"],
+              amount: record["amount"],
+              date: DateTime.parse(record["date"])
+              )
+          );
+       }
+       
+       return transactionList;
        }
 }
