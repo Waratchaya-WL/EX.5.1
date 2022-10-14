@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/models/Transaction.dart';
 import 'package:flutter_application_1/providers/transaction_provider.dart';
 import 'package:flutter_application_1/screens/form_screen.dart';
+import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -63,8 +64,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 child: Text("ไม่พบข้อมูล",style: TextStyle(fontSize: 40),),
               );
              }else{
-              
+
              }
+             subtitle: Text(DateFormat("dd/MM/yyyy").format(date.date)),
           },
           ));
   }
