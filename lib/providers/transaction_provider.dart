@@ -8,6 +8,11 @@ class TransactionProvider with ChangeNotifier{
    List<Transactions>getTransaction(){
     return transactions;
    }
+   void initDate() async{
+      var db=await TransactionDB(dbName:"transactions.db");
+      transactions = await db.loadAllData();
+      notifyListeners();
+   }
    void addTransaction(Transactions statement) async{
       var db=await TransactionDB(dbName:"transactions.db");
       await db.InsertData(statement);
